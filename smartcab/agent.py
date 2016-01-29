@@ -52,11 +52,11 @@ class LearningAgent(Agent):
             else:
                 self.q[(state, action)] = oldv + self.alpha * (reward - oldv)
 
-            self.update_nb += 1
-            self.update_list.append([{(state, action):(self.q[(state, action)])},self.update_nb])
-            file_object = open('q_values_e_{0}'.format(0.8),'wb')
-            pickle.dump(self.update_list,file_object)
-            file_object.close()
+            #self.update_nb += 1
+            #self.update_list.append([{(state, action):(self.q[(state, action)])},self.update_nb])
+            #file_object = open('q_values_e_{0}'.format(0.8),'wb')
+            #pickle.dump(self.update_list,file_object)
+            #file_object.close()
 
         def chooseAction(self, state):
             q = [getQ(self,state, a) for a in self.actions]
